@@ -32,13 +32,19 @@
         </section>
     }
 
-    <div *ngIf="collectionItems.length === 0 && collectionSelection.length === 0" class="empty-list-message">
-        {{emptyList}}
+    @if(collectionItems.length === 0 && collectionSelection.length === 0){
+        <div class="empty-list-message">
+            {{emptyList}}
+        </div>
+    }
+</div>
+
+@if(loading){
+    <div class="loading-spinner"></div>
+}
+
+@if(error){
+    <div class="error-message">
+        {{ error }}
     </div>
-</div>
-
-<div *ngIf="loading" class="loading-spinner"></div>
-
-<div *ngIf="error" class="error-message">
-    {{ error }}
-</div>
+}
