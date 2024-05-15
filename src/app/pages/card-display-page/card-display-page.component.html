@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>Suas cartas do pacote aberto</h1>
+ 
+    <div class="wrapper-cards">
+        @for(item of creatureCards; track $index){
+        <div class="card">
+            <img [src]="item?.imageUrl" [alt]="item?.name">
+            <div>
+              <strong>{{item?.name}}</strong>
+              <span>{{item?.manaCost}} - {{item?.colorIdentity?.[0]}}</span>
+              <p>{{item?.text}}</p>
+            </div>
+        </div>     
+    }
+    </div>  
+  </div>
