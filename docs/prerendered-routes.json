@@ -1,0 +1,6 @@
+{
+  "routes": [
+    "/cards",
+    "/home"
+  ]
+}
