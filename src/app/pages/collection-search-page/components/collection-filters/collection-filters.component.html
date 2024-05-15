@@ -1,0 +1,10 @@
+<input type="text" placeholder="Nome da coleção (opcional)" [(ngModel)]="name">
+<select [(ngModel)]="block">
+  <option value="">Selecione um bloco (obrigatório)</option>
+  <option value="amonkhet">Amonkhet</option>
+  <option value="ixalan">Ixalan</option>
+  <option value="zendikar">Zendikar</option>
+  <option value="ravnica">Ravnica</option>
+  <option value="Oonslaught">Onslaught</option>
+</select>
+<button (click)="searchCollection()" [disabled]="!block">Pesquisar</button>

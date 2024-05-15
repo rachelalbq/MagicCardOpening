@@ -1,0 +1,38 @@
+<div class="container" *ngIf="!loading && !error">
+    <h1>Magic</h1>
+    <p>Pesquise um nome e/ou selecione um bloco de opções</p>
+
+    <section class="section-search">
+        <app-collection-filters (collection)="handleCollection($event)"></app-collection-filters>
+    </section>
+
+    <img src="../../assets/home-image.webp" alt="Magic Cards">
+
+    @if(collectionItems.length !== 0){
+        <section class="wrapper-cards">
+            @for(item of collectionItems; track $index){
+                <div class="card-collection" (click)="handleCardClick(item)">
+                    <strong>{{item.name}}</strong>
+                    <p>{{item.block}}</p>
+                    <span>{{item.releaseDate | date:'dd/MM/yyyy'}}</span>
+                </div>
+            }
+        </section>
+    }
+
+    @if(collectionSelection.length !== 0){
+        <section class="wrapper-cards">
+            @for(item of collectionSelection; track $index){
+                <div class="card-collection" (click)="handleCollectionClick(item)">
+                    <strong>{{item.name}}</strong>
+                    <p>{{item.block}}</p>
+                    <span>{{item.releaseDate | date:'dd/MM/yyyy'}}</span>
+                </div>
+            }
+        </section>
+    }
+
+    <div *ngIf="collectionItems.length === 0 && collectionSelection.length === 0" class="empty-list-message">
+        {{emptyList}}
+    </div>
+</div>
