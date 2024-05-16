@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { CollectionService } from '../../services/collection.service';
 import { NavigationExtras, Router, RouterModule } from '@angular/router';
 import { catchError, of } from 'rxjs';
-import { Card, CardSet, IBoosters, ICollection, SetsResponse } from '../../models/collection';
+import { Card, CardSet, IBoosters, ICollection } from '../../models/collection';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({
