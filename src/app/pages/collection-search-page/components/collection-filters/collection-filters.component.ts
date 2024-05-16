@@ -26,7 +26,7 @@ export class CollectionFiltersComponent {
         .subscribe((response: any) => {
           const responseArray = Object.values(response)
           this.collection.emit(responseArray as ICollection[])
-        });
+        })
     }
   }
 }
