@@ -1,50 +1,64 @@
 @import '../../../../styles/variables.scss';
 
 input[type="text"] {
-    padding: 0 10px;
-    border: 1px solid $gray;
-    border-radius: 5px;
-    margin-right: 10px;
-    background-color: $lightest-gray;
-    color: $black;
-    flex: 1;
-    height: 40px;
-    outline: none;
-    width: 350px;
-    font-size: 16px;
+  padding: 0 10px;
+  border: 1px solid $gray;
+  border-radius: 5px;
+  margin-right: 10px;
+  background-color: $lightest-gray;
+  color: $black;
+  flex: 1;
+  height: 40px;
+  outline: none;
+  width: 350px;
+  font-size: 16px;
 
-    &::placeholder {
-      color: $gray;
-    }
+  &::placeholder {
+    color: $gray;
+  }
+}
+
+select {
+  padding: 0 12px;
+  border: 1px solid $gray;
+  border-radius: 5px;
+  margin-right: 10px;
+  background-color: $lightest-gray;
+  color: $gray;
+  flex: 0 0 150px;
+  height: 42px;
+  font-size: 16px;
+}
+
+button {
+  padding: 0 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: $dark-gray;
+  color: $lightest-gray;
+  cursor: pointer;
+  height: 40px;
+
+  &:hover:not(:disabled) {
+    background-color: $black;
   }
 
-  select {
-    padding: 0 12px;
-    border: 1px solid $gray;
-    border-radius: 5px;
-    margin-right: 10px;
-    background-color: $lightest-gray;
-    color: $gray;
-    flex: 0 0 150px;
-    height: 42px;
-    font-size: 16px;
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+@media (max-width: 768px) {
+
+  input[type="text"],
+  select,
+  button {
+    width: 314px;
+    margin-bottom: 10px;
   }
 
   button {
-    padding: 0 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: $dark-gray;
-    color: $lightest-gray;
-    cursor: pointer;
-    height: 40px;
-
-    &:hover:not(:disabled) {
-      background-color: $black;
-    }
-
-    &:disabled {
-        opacity: 0.6;
-        cursor: not-allowed;
-      }
+    margin-bottom: 0;
   }
+}

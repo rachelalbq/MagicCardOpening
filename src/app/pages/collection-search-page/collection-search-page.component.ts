@@ -27,6 +27,7 @@ export class CollectionSearchPageComponent {
 
   handleCollection(e: any) {
     const collection = e
+    this.loading = true
     this.collectionItems = collection[0] as ICollection[]
     if (this.collectionItems.length > 0) {
       this.emptyList = null
@@ -34,6 +35,7 @@ export class CollectionSearchPageComponent {
       this.emptyList = 'A coleção está vazia!'
     }
     this.collectionSelection = []
+    this.loading = false
   }
 
   handleCardClick(item: ICollection) {
